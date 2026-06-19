@@ -1,8 +1,23 @@
 /*
   Створіть новий тип даних, який підходить для цих двох об'єктів.
 */
+interface Page {
+  title: string;
+  likes: number;
+  accounts: string[];
+  status: string;
+}
 
-const page1 = {
+interface Details {
+  createAt: Date,
+  updateAt: Date
+}
+
+interface ExtendedPage extends Page {
+  details: Details;
+}
+
+const page1:ExtendedPage = {
   title: 'The awesome page',
   likes: 100,
   accounts: ['Max', 'Anton', 'Nikita'],
@@ -13,7 +28,7 @@ const page1 = {
   }
 }
 
-const page2 = {
+const page2: Page = {
   title: 'Python or Js',
   likes: 5,
   accounts: ['Alex'],
